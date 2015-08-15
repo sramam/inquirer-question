@@ -1,0 +1,24 @@
+{
+  "name": "inquirer-question",
+  "version": "1.0.0",
+  "description": "flexible promise-based enhancement for one question case",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": "false",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewnd9/inquirer-question.git"
+  },
+  "keywords": [
+    "inquirer",
+    "bluebird",
+    "promise"
+  ],
+  "author": "ewnd9 <ewndnine@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer-bluebird": "^1.0.2"
+  }
+}
