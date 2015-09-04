@@ -1,8 +1,11 @@
 var inquirer = require('inquirer-bluebird');
+var clone = require('clone');
+
 var prompt = inquirer.prompt;
 
-inquirer.prompt = function(params, cb) {
-  if (!Array.isArray(params) && (typeof params.choices === 'object') && !Array.isArray(params.choices)) {
+inquirer.prompt = function(_params, cb) {
+  if (!Array.isArray(_params) && (typeof _params.choices === 'object') && !Array.isArray(_params.choices)) {
+    var params = clone(_params);
     params.name = 'x';
 
     var choices = params.choices;
