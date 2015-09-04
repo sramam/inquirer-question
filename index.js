@@ -22,7 +22,7 @@ inquirer.prompt = function(_params, cb) {
       return choices[answers.x]();
     });
   } else {
-    return prompt(params, cb);
+    return prompt(_params, cb);
   }
 };
 
