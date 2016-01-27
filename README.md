@@ -45,11 +45,10 @@ inquirer
     message: 'hi',
     choices: {
       'test-1': function() {
+        // some computatations
         return 1;
       },
-      'test-2': function() {
-        return 2;
-      }
+      'test-2': 2
     }
   })
   .then(function(result) {

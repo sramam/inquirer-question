@@ -19,7 +19,8 @@ inquirer.prompt = function(_params, cb) {
     });
 
     return prompt(params, cb).then(function(answers) {
-      return choices[answers.x]();
+      var res = choices[answers.x];
+      return typeof res === 'function' ? res() : res;
     });
   } else {
     return prompt(_params, cb);
