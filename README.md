@@ -5,29 +5,58 @@ flexible promise-based enhancement for one question case with backward capabilit
 ## Install
 
 ```
-$ npm install inquirer-question
+$ npm install inquirer-question --save
 ```
 
 ## Usage
 
-```javascript
-var inquirer = require('inquirer-question');
+### Before
 
-inquirer.prompt({
-  type: 'list',
-  message: 'hi',
-  choices: {
-    'test-1': function() {
+```js
+var inquirer = require('inquirer-bluebird');
+
+inquirer
+  .prompt({
+    type: 'list',
+    name: 'q1',
+    message: 'hi',
+    choices: [
+      'test-1',
+      'test-2'
+    ]
+  })
+  .then(function(result) {
+    if (result.q1 === 'test-1') {
       return 1;
-    },
-    'test-2': function() {
+    } else if (result.q1 === 'test-2') {
       return 2;
     }
-  }
-}).then(function(result) {
-  console.log(result);
-});
+  });
 ```
+
+### Now
+
+```js
+var inquirer = require('inquirer-question');
+
+inquirer
+  .prompt({
+    type: 'list',
+    message: 'hi',
+    choices: {
+      'test-1': function() {
+        return 1;
+      },
+      'test-2': function() {
+        return 2;
+      }
+    }
+  })
+  .then(function(result) {
+    console.log(result); //=> 1 or 2
+  });
+```
+
 
 ## License
 
